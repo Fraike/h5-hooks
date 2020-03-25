@@ -14,9 +14,16 @@
 ### 打包图片
 `npm i file-loader url-loader -D`
 ### js转义
-`npm i -D babel-loader @babel/preset-env @babel/core @babel/plugin-transform-runtime`
-`npm i @babel/runtime @babel/runtime-corejs3`
+```
+npm i -D babel-loader @babel/preset-env @babel/core @babel/plugin-transform-runtime
+
+npm i @babel/runtime @babel/runtime-corejs3
+```
 ### 解析es6语法
 `npm i @babel/polyfill -D`
 ### 浏览器中运行
 `npm install webpack-dev-server -D`
+###  
+npm install cross-env -D
+### webpack配置文件分离
+`npm install --D webpack-merge`

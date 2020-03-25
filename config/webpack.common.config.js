@@ -1,10 +1,8 @@
-const webpack = require("webpack")
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
-    mode: 'development', // 开发模式
     entry: {
         index: [path.resolve(__dirname, '../src/index.js')],    // 入口文件
     },
@@ -95,11 +93,6 @@ module.exports = {
             },
         ]
     },
-    devServer:{
-        port:3000,
-        hot:true,
-        contentBase:'../dist'
-      },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
@@ -114,7 +107,5 @@ module.exports = {
             filename: "[name].[hash].css",
             chunkFilename: "[id].css",
         }),
-        new webpack.HotModuleReplacementPlugin() //热更新插件
     ],
-    devtool: 'cheap-module-eval-source-map'
 }
