@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import {add} from "./utils/math"
 
 function App(){
-
+    useEffect(()=>{
+      console.log(add(1,2))
+    })
     return (
         <div>
-            hell
+
             <span>ss</span>
         </div>
     )

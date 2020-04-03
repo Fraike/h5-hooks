@@ -1,40 +1,34 @@
-var findSubstring = function(s, words) {
-    let len = words[0].length
-    let r = []
-    let searchArrange = (cur,array) => {
-        if(cur.length === len){
-            r.push(cur)
-        }else {
-            array.forEach((item,index)=>{
-                let _array = [].concat(array)
-                _array.splice(index,1)
-                searchArrange(cur.concat([item]),_array)
-            })
-        }
-    }
-    searchArrange([],words)
-    let posArray = []
-    let pos
-    r.map((item,index)=>{
-        pos = s.indexOf(item.join(''))
-        while (pos > -1){
-            posArray.push(pos)
-            pos = s.indexOf(item.join(''),pos+1)
+/**
+ * @param {string[]} ops
+ * @return {number}
+ */
+let calPoints = function(ops) {
+    let res = []
+    let pre1
+    let pre2
+    ops.map(item=>{
+        switch (item){
+            case "C":
+                if(res.length){
+                    res.pop()
+                }
+                break
+            case "D":
+                pre1 = res.pop()
+                res.push(pre1,pre1 * 2)
+                break
+            case "+":
+                pre1 = res.pop()
+                pre2 = res.pop()
+                res.push(pre2,pre1,pre2 + pre1)
+                break
+            default:
+                res.push(parseInt(item))
         }
     })
-    console.log(posArray)
-    // return posArray
-    return Array.from(new Set(posArray))
+    console.log(res)
+    return  res.reduce((total,num)=>{return total + num})
 };
 
-
-// let s = "wordgoodgoodgoodbestword",
-//     words = ["word","good","best","good"]
-
-let s ="foobarfoobar", words = ["foo","bar"]
-
-
-    // ["foo","bar"]
-
-
-console.log(findSubstring(s,words))
+let res =  calPoints(["5","2","C","D","+"])
+console.log(res)

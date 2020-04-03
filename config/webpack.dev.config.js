@@ -10,6 +10,9 @@ module.exports = merge(common,{
         contentBase:'../dist'
     },
     devtool: 'cheap-module-eval-source-map',
+    optimization: {
+        usedExports: true
+    },
     plugins:[
         new webpack.HotModuleReplacementPlugin() //热更新插件
     ]

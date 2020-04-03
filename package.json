@@ -1,5 +1,8 @@
 {
   "name": "h5-hooks",
+  "sideEffects": [
+    "*.css"
+  ],
   "version": "1.0.0",
   "description": "just for fun",
   "main": "index.js",
