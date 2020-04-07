@@ -109,6 +109,7 @@ module.exports = {
     }),
   ],
   optimization: {
+    usedExports: true,
     splitChunks: {
       chunks: "all",
       minSize: 30000,
@@ -127,7 +128,8 @@ module.exports = {
         default: {
           minChunks: 2,
           priority: -20,
-          reuseExistingChunk: true
+          reuseExistingChunk: true,
+          filename: "common.js"
         }
       }
     }

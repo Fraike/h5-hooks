@@ -11,6 +11,9 @@
 `npm i -D postcss-loader autoprefixer `
 ### 拆分css
 `npm i -D mini-css-extract-plugin`
+### css压缩
+`npm i optimize-css-assets-webpack-plugin -D
+`
 ### 打包图片
 `npm i file-loader url-loader -D`
 ### js转义
@@ -27,4 +30,6 @@ npm i @babel/runtime @babel/runtime-corejs3
 npm install cross-env -D
 ### webpack配置文件分离
 `npm install --D webpack-merge`
+### 代码分析
+`webpack --profile --json > stats.json --config config/webpack.prod.config.js `
 
