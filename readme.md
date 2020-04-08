@@ -26,10 +26,15 @@ npm i @babel/runtime @babel/runtime-corejs3
 `npm i @babel/polyfill -D`
 ### 浏览器中运行
 `npm install webpack-dev-server -D`
-###  
-npm install cross-env -D
+###  区分环境
+`npm install cross-env -D`
 ### webpack配置文件分离
 `npm install --D webpack-merge`
 ### 代码分析
 `webpack --profile --json > stats.json --config config/webpack.prod.config.js `
 
+
+TODO
+- [ ] husky
+- [ ] sentry
+- [ ] classnames
