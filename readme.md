@@ -32,9 +32,14 @@ npm i @babel/runtime @babel/runtime-corejs3
 `npm install --D webpack-merge`
 ### 代码分析
 `webpack --profile --json > stats.json --config config/webpack.prod.config.js `
-
+### 引入axios
+`npm i axios -D`
+### 使用eslint
+`npm i eslint -D`
+### 使用多页面打包
 
 TODO
 - [ ] husky
 - [ ] sentry
 - [ ] classnames
+- [ ] hooks-eslint
