@@ -36,6 +36,7 @@ npm i @babel/runtime @babel/runtime-corejs3
 `npm i axios -D`
 ### 使用eslint
 `npm i eslint -D`
+### 使用dll
 ### 使用多页面打包
 
 TODO

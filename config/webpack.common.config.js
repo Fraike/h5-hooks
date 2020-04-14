@@ -1,14 +1,28 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-module.exports = {
+const webpack = require('webpack')
+const makePlugins = (configs) => {
+  const plugins = []
+}
+
+
+const configs = {
   entry: {
+    // eslint-disable-next-line no-undef
     index: [path.resolve(__dirname, '../src/index.js')],    // 入口文件
   },
   output: {
     filename: '[name].[hash:8].js',      // 打包后的文件名称
     path: path.resolve(__dirname, '../dist')  // 打包后的目录
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
   },
   module: {
     rules: [
@@ -17,6 +31,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         },
+        include: path.resolve(__dirname, '../src'),
         exclude: /node_modules/
       },
       {
@@ -103,10 +118,12 @@ module.exports = {
         collapseWhitespace: false, //是否折叠空白
       },
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].[hash].css",
-      chunkFilename: "[id].css",
+    new AddAssetHtmlWebpackPlugin({
+      filepath: path.resolve(__dirname, '../dll/vendors.dll.js')
     }),
+    new webpack.DllReferencePlugin({
+      manifest: path.resolve(__dirname, '../dll/vendors.manifest.json')
+    })
   ],
   optimization: {
     usedExports: true,
@@ -135,3 +152,23 @@ module.exports = {
     }
   }
 }
+
+// plugins: [
+//   new CleanWebpackPlugin(),
+//   new HtmlWebpackPlugin({
+//     template: path.resolve(__dirname, '../public/index.html'),
+//     filename: "index.html",
+//     minify: {
+//       removeAttributeQuotes: false, //是否删除属性的双引号
+//       collapseWhitespace: false, //是否折叠空白
+//     },
+//   }),
+//   new MiniCssExtractPlugin({
+//     filename: "[name].[hash].css",
+//     chunkFilename: "[id].css",
+//   }),
+// ],
+
+// configs.plugins = makePlugins()
+
+module.exports = configs
