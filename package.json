@@ -4,7 +4,7 @@
   "description": "just for fun",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config config/webpack.dev.config.js",
+    "start": "webpack-dev-server --config config/webpack.dev.config.js",
     "dep": "webpack --config config/webpack.prod.config.js ",
     "build:dll": "webpack --config config/webpack.dll.js"
   },
@@ -50,6 +50,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
-    "@babel/runtime-corejs3": "^7.9.2"
+    "@babel/runtime-corejs3": "^7.9.2",
+    "classnames": "^2.2.6",
+    "rmc-dialog": "^1.1.1"
   }
 }
