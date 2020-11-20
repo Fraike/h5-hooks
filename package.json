@@ -4,9 +4,12 @@
   "description": "just for fun",
   "main": "index.js",
   "scripts": {
+    "start-local": "PORT=3000 HOST=local-pos.heytea.com REACT_APP_API_ENV=local webpack-dev-server --config config/webpack.dev.config.js",
     "start": "webpack-dev-server --config config/webpack.dev.config.js",
+    "dashboard": "webpack-dashboard -- webpack-dev-server --config config/webpack.dev.config.js --watch",
     "dep": "webpack --config config/webpack.prod.config.js ",
-    "build:dll": "webpack --config config/webpack.dll.js"
+    "build:dll": "webpack --config config/webpack.dll.js",
+    "precommit": "eslint src/**/*.js"
   },
   "keywords": [
     "h5"
@@ -31,7 +34,9 @@
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.19.0",
     "file-loader": "^6.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^4.0.1",
+    "husky": "^4.3.0",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
     "mini-css-extract-plugin": "^0.9.0",
