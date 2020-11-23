@@ -11,7 +11,7 @@ interface IButton {
 export const Button: React.FC<IButton> = (props: IButton) => {
   const theme = useContext(ThemeContext)
 
-   const themeStyle = {...theme}
+  const themeStyle = {...theme}
 
   return (
     <div style={themeStyle} className={style.button}>
