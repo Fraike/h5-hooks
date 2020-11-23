@@ -1,25 +1,21 @@
-import React, {useContext, useState} from "react";
+/** @format */
 
+import React, {useContext, useState} from 'react'
 import style from './style.css'
-
-import { ThemeContext} from "../../page/home/index";
-
+import {ThemeContext} from '../../page/home/index'
 
 interface IButton {
-    text: string
+  text: string
 }
 
-export const Button:React.FC<IButton> = (props:IButton) => {
+export const Button: React.FC<IButton> = (props: IButton) => {
+  const theme = useContext(ThemeContext)
 
-    const [count] = useState(0)
+   const themeStyle = {...theme}
 
-    const theme = useContext(ThemeContext)
-
-    console.log({theme})
-
-    const themeStyle = { ...theme }
-
-    return <div style={themeStyle} className={style.button}>
-        {props.text}
+  return (
+    <div style={themeStyle} className={style.button}>
+      {props.text}
     </div>
+  )
 }
