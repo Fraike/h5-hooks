@@ -21,7 +21,7 @@ export const ThemeContext = createContext(themes.light)
 export const Main: React.FC = () => {
   return (
     <>
-      <div>1212322</div>
+      <div>123</div>
     </>
   )
 }
