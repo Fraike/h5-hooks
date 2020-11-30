@@ -40,7 +40,7 @@ npm i @babel/runtime @babel/runtime-corejs3
 ### 使用多页面打包
 
 TODO
-- [ ] husky
+- [x] husky
 - [ ] sentry
-- [ ] classnames
+- [x] classnames
 - [ ] hooks-eslint
