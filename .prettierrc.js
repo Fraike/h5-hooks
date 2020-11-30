@@ -11,5 +11,4 @@ module.exports = {
   insertPragma: true,
   tabWidth: 2,
   useTabs: false,
-  requirePragma: false,
 }
