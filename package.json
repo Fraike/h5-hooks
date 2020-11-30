@@ -77,7 +77,7 @@
     }
   },
   "lint-staged": {
-    "*{.ts,.js}": [
+    "*{.tsx,.ts,.js}": [
       "eslint --ext .tsx,.ts,.js --fix ./src --max-warnings 3",
       "prettier --write"
     ]
